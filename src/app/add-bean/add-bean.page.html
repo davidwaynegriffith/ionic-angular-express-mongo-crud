@@ -1,9 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>add-bean</ion-title>
-  </ion-toolbar>
+    <ion-toolbar class="ios hydrated">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ios title-ios hydrated">Add Bean</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-list lines="full" class="ion-no-margin ion-no-padding ios list-ios list-lines-full list-ios-lines-full hydrated">
+        <form [formGroup]="beanForm" (ngSubmit)="onFormSubmit()">
+            <ion-item>
+                <ion-label position="floating">Name</ion-label>
+                <ion-input formControlName="name" type="text" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Type</ion-label>
+                <ion-input formControlName="type" type="text" required>
+                </ion-input>
+            </ion-item>
+            <ion-row>
+                <ion-col>
+                    <ion-button type="submit" color="primary" shape="full" expand="block">Add Bean</ion-button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-list>
 </ion-content>
